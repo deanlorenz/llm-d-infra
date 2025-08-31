@@ -80,7 +80,7 @@ decode:
     tensor: 1 # these will be derived based performance testing
   monitoring:
     podmonitor:
-      enabled: false
+      enabled: true
       portName: "metrics" # decode vLLM service port (from routing.proxy.targetPort)
       path: "/metrics"
       interval: "30s"
@@ -215,7 +215,7 @@ prefill:
     tensor: 1 # these will be derived based performance testing
   monitoring:
     podmonitor:
-      enabled: false
+      enabled: true
       portName: "metrics" # prefill vLLM service port (from routing.servicePort)
       path: "/metrics"
       interval: "30s"

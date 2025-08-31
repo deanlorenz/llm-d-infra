@@ -1,13 +1,13 @@
 multinode: false
 
 modelArtifacts:
-  uri: "hf://Qwen/Qwen3-0.6B"
-  name: "Qwen/Qwen3-0.6B"
-  size: 20Gi
+  uri: "hf://meta-llama/Llama-3.1-70B"
+  name: "meta-llama/Llama-3.1-70B"
+  size: 160Gi
   authSecretName: "llm-d-hf-token"
 
 routing:
-  modelName: Qwen/Qwen3-0.6B
+  modelName: "meta-llama/Llama-3.1-70B"
   servicePort: 8000
   parentRefs:
     - group: gateway.networking.k8s.io
@@ -37,7 +37,7 @@ decode:
   replicas: 2
   monitoring:
     podmonitor:
-      enabled: false
+      enabled: true
       portName: "metrics"  # decode vLLM service port (from routing.proxy.targetPort)
       path: "/metrics"
       interval: "30s"

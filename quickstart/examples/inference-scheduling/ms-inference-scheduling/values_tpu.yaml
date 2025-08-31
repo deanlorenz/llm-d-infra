@@ -1,4 +1,4 @@
-# This values.yaml file creates the resources for Qwen/Qwen3-0.6B
+# This values.yaml file creates the resources for meta-llama/Llama-3.1-70B
 multinode: false
 
 modelArtifacts:
@@ -42,7 +42,7 @@ decode:
       cloud.google.com/gke-tpu-accelerator: "tpu-v6e-slice"
   monitoring:
     podmonitor:
-      enabled: false
+      enabled: true
       portName: "metrics"  # decode vLLM service port (from routing.proxy.targetPort)
       path: "/metrics"
       interval: "30s"
